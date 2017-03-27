@@ -1,0 +1,46 @@
+<!DOCTYPE>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="The personal website of Takashi Nakano">
+    <meta name="keywords" content="Takashi, Nakano, blab, blab.im, harf.io, twitter">
+    <meta name="robots" content="index, follow">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel=icon href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/main.css">
+
+    <title>Ronald Fusco</title>
+
+  </head>
+
+  <body>
+    <div id="wrapper">
+    <% include partials/nav.ejs %>
+
+
+    <div id="content-con">
+      <div id="cmt-icon">
+        <i class="fa fa-commenting" aria-hidden="true"></i>
+      </div>
+      <div id="cmt-container">
+        <form>
+          <input name="comment" type="text" method="POST" required>
+          <button type="submit">Submit</button>
+        </form>
+        <ul id="cmt-list">
+          <li>You are great.</li>
+          <li>Best Person ever.</li>
+          <li>breathtaking.</li>
+        </ul>
+      </div>
+    </div>
+
+
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

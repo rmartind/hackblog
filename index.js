@@ -1,33 +1,26 @@
-const http = require('http');
-const fs= require('fs');
+var express = require('express');
+const port = 8000;
 
-const hostname = '127.0.0.1';
-const port = '8000';
+var server = express();
 
-const server = http.createServer((req, res) => {
-  console.log('Request made: ' + req.url);
+server.set('view engine', 'ejs');
+server.use('/public', express.static('public'));
 
-  if(req.url === '/home' || req.url === '/') {
-    res.writeHead(200, {'Content-Type' : 'text/html'});
-    fs.createReadStream(__dirname + '/index.html').pipe(res);
-  } else if (req.url === '/about') {
-    res.writeHead(200, {'Content-Type' : 'text/html'});
-    fs.createReadStream(__dirname + '/about.html').pipe(res);
-  }  else if (req.url === '/contact') {
-    res.writeHead(200, {'Content-Type' : 'text/html'});
-    fs.createReadStream(__dirname + '/contact.html').pipe(res);
-  }  else if (req.url === '/comment') {
-    res.writeHead(200, {'Content-Type' : 'text/html'});
-    fs.createReadStream(__dirname + '/comment.html').pipe(res);
-  } else {
-    res.writeHead(200, {'Content-Type' : 'text/html'});
-    fs.createReadStream(__dirname + '/404.html').pipe(res);
-  }// 404 Not Found
-
-
-
+server.get('/', (req, res) => {
+  res.render('index');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server up at http://${hostname}.${port}`);
+server.get('/about', (req, res) => {
+  res.render('about');
 });
+
+server.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
+server.get('/comment', (req, res) => {
+  res.render('comment');
+});
+
+
+server.listen(port);
