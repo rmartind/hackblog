@@ -113,6 +113,7 @@ textarea::-webkit-input-placeholder {
 
 #twitter{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 1;
@@ -120,6 +121,7 @@ textarea::-webkit-input-placeholder {
 
 #facebook {
   display: flex;
+    flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 1;
@@ -164,14 +166,54 @@ textarea::-webkit-input-placeholder {
 }
 
 #cmt-container {
+  background: #00FF00;
   display: flex;
   flex-direction: column;
-    align-items: center;
+  align-items: center;
   margin-top: 40px;
+  opacity: 0.5;
+  border: 12px solid;
+  border-radius: 2px;
 }
 
-ul{
+#cmt-container input {
+  background: black;
+  margin-top: 10px;
+  opacity: 0.8;
+  height: 50px;
+  border-radius: 4px;
+  color: #00FF00;
+  font-size: 20px;
+}
+
+#cmt-container button {
+  background: #000000;
+  height: 40px;
+  opacity: 0.8;
+  border-radius: 4px;
+  color: #00FF00;
+}
+
+#cmt-container button:hover {
+  opacity: 1;
+}
+
+#cmt-container ul{
     list-style-type: none;
+    width: 100%;
     padding: 0;
     margin: 0;
+}
+
+#cmt-container li{
+  background: #000000;
+  margin-top: 10px;
+  opacity: 0.8;
+  height: 50px;
+  border-radius: 4px;
+
+}
+
+#cmt-container li:hover {
+  opacity: 1;
 }
